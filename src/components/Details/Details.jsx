@@ -6,7 +6,7 @@ import Actors from './Actors/Actors'
 import Smiler from './SmilerMovies/Smiler'
 import { request } from '../../API/Api'
 import { Authcontext } from '../../AuthContext/AuthContext'
-import SeasonsEpisodes from '../Episode Groups/Seasons/SeasonsEpisodes'
+import SeasonsEpisodes from '../EpisodeGroups/Seasons/SeasonsEpisodes'
 export default function Details() {
 // we tryed to make a use state share the data to all episod but is wrong
 //  and take alook in samiler what the hell is that 

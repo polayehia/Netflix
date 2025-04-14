@@ -16,7 +16,7 @@ import { Link, useParams } from 'react-router-dom';
 import EpisodeStyle from '../EpisodeStyle/EpisodeStyle';
 import { useContext } from 'react';
 import { Authcontext } from '../../../AuthContext/AuthContext';
-// i toke the details form details componant and it pass the number of seasons to the SeasonsEpisodes componant
+// i toke the details form details components and it pass the number of seasons to the SeasonsEpisodes components
 
 export default function SeasonsEpisodes({details}) {
   const [open, setOpen] = React.useState(false);

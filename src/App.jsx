@@ -5,22 +5,22 @@ import './App.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Home from './componant/Home/Home'
-import Register from './componant/Register/Register';
-import Login from './componant/Login/Login';
-import Layout from './componant/Layout/Layout';
+import Home from './components/Home/Home'
+import Register from './components/Register/Register';
+import Login from './components/Login/Login';
+import Layout from './components/Layout/Layout';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { AuthContextProvider } from './AuthContext/AuthContext';
-import NotFound from './componant/NotFound/NotFound';
-import ProtactedRout from './componant/Protacted/ProtactedRout';
-import Account from './componant/Account/Account';
-import Details from './componant/Details/Details';
-import ActorsDetails from './componant/Details/Actors/ActorsDetails';
-import ActorsMovies from './componant/Details/Actors/ActorsMovies';
-import Category from './componant/Category/Category';
-import AllSeasons from './componant/Episode Groups/Seasons/AllSeasons/AllSeasons';
-import EpisodeDetails from './componant/Episode Groups/episodeDetails/episodeDetails';
-import CategoryList from './componant/Category/CategoryList/CategoryList';
+import NotFound from './components/NotFound/NotFound';
+import ProtactedRout from './components/Protacted/ProtactedRout';
+import Account from './components/Account/Account';
+import Details from './components/Details/Details';
+import ActorsDetails from './components/Details/Actors/ActorsDetails';
+import ActorsMovies from './components/Details/Actors/ActorsMovies';
+import Category from './components/Category/Category';
+import AllSeasons from './components/EpisodeGroups/Seasons/AllSeasons/AllSeasons';
+import EpisodeDetails from './components/EpisodeGroups/episodeDetails/episodeDetails';
+import CategoryList from './components/Category/CategoryList/CategoryList';
 
 
 

@@ -10,7 +10,7 @@ export function AuthContextProvider({ children }) {
     const [user, setUser] = useState({});
     // this for to switch from movies to tv serise
     const [movie, setMovie] = useState(false);
-    // this for to get the number of seasons from the details componant and send it to allseasons componant
+    // this for to get the number of seasons from the details components and send it to allseasons components
     const [sharDetails, setSharDetails] = useState([]);
     const [searchResults, setSearchResults] = useState([]);
 
