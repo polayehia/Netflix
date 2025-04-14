@@ -8,11 +8,11 @@ export default function ProtactedRout({children}) {
 
     const {user}=useContext(Authcontext)
     // !localStorage.getItem('token')
-    if (!user) {
-        return <Navigate to='/login'/>
-    }else{
-      return children
+    // if (!user) {
+    //     return <Navigate to='/login'/>
+    // }else{
+    //   return children
 
-    }
+    // }
   
 }
