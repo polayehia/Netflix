@@ -1,7 +1,5 @@
 import React from 'react';
-import Row from '../Row/Row';
 import SavedShow from '../SavedShow/SavedShow';
-import CategoryList from '../Category/CategoryList/CategoryList';
 
 export default function Account() {
   return (
@@ -19,7 +17,7 @@ export default function Account() {
       </div>
       
     <SavedShow ></SavedShow>
-    {/* <CategoryList></CategoryList> */}
+    
     </div>
   </>
   

@@ -3,10 +3,7 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Masonry from "@mui/lab/Masonry";
 import { styled } from "@mui/material/styles";
-import callApi from "../../../hooks/callApi";
-import { request } from "../../../API/Api";
-import axios from "axios";
-import horro from "../../../assets/daniel.jpg";
+
 import { Link } from "react-router-dom";
 import Switch from "../../Switch/Switch";
 import { useContext } from "react";
@@ -37,16 +34,7 @@ const {movie}=useContext(Authcontext)
           {(!movie ? movies : tv).map((item, index) => (
             
               <div className=" relative  group" key={index}>
-                {/* <Label
-                  sx={{
-                    bgcolor: "black",
-                    color: "white",
-                    fontSize: "20px",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {item.title}
-                </Label> */}
+               
                 <Link to={`/category/${item.id}`}>
                   <img
                     srcSet={`${item.img}?w=162&auto=format&dpr=2 2x`}

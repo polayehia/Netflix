@@ -32,12 +32,9 @@ export default function Details() {
         const {data}=await axios.get(request.tvDetails(id))
         setDetails(data)
         setSharDetails([data])
-        console.log('sharDetails',data);
         setCategory(data.genres)
       }
-      console.log(data)
     } catch (error) {
-      console.log(error);
       
     }
   }

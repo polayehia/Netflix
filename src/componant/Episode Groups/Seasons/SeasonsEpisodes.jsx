@@ -32,8 +32,7 @@ const {setSharDetails}=useContext(Authcontext)
 
 
   const handleSeasonChange = (event) => {
-    // setAge(Number(event.target.value) || '');
-    // setSeason(details.seasons[event.target.value].season_number);
+   
     setSeason(event.target.value);
     
     
@@ -44,14 +43,12 @@ const handleEpisodeChange=(event)=>{
  async function seasonFetch () {
     try {
       const {data}=await axios.get(request.tvSeasons(seasone,id))
-    console.log('sesonData',data.episodes);
     setAllEpisodes(data.episodes)
     setSharDetails(data.episodes)
     
     
     
     } catch (error) {
-      console.log('errorfromseasonFetch ',error);
       
     }
     
@@ -61,9 +58,7 @@ const handleEpisodeChange=(event)=>{
     try {
       const {data}=await axios.get(request.tvSeasonEpisodes(id,seasone,episode))
       setEpisodeDetails(data)
-      console.log('episodeData',data);
     } catch (error) {
-      console.log('errorfromepisodeFetch ',error);
       
     }
   }

@@ -33,7 +33,6 @@ const deleteMovie = async (movie) => {
     await updateDoc(movieRef, { savedShows: result });
 
   } catch (error) {
-    console.log('errorFilter', error);
    
   }
 };
@@ -50,7 +49,6 @@ const deleteMovie = async (movie) => {
           </h4>
         )}
       </div>
-      {/* <AccRow ele={favShow}></AccRow> */}
     </>
   );
 }

@@ -14,8 +14,8 @@ export default function Login() {
     logIn(email, password);
     if (user?.accessToken) {
       localStorage.setItem("token", user.accessToken);
+      Navigate("/");
     }
-    // Navigate("/");
   };
 
   return (

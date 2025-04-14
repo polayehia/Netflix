@@ -25,7 +25,6 @@ export default function Trailer() {
         setTrailer(response.data.results[0]);
       }
     } catch (error) {
-      console.error("Error fetching trailer data:", error);
     }
   };
 
@@ -47,7 +46,7 @@ export default function Trailer() {
         <iframe
           className=" w-[420px] sm:w-[500px] "
           height="315"
-          src={`https://www.youtube.com/embed/${trailer.key}`}
+          src={`https://www.youtube.com/embed/${trailer.key}?controls=0&autoplay=1&mute=1&rel=0&cc_load_policy=1 `}
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
           title={trailer.name}

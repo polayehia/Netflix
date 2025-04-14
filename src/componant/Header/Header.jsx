@@ -4,15 +4,12 @@ export default function Header({wallpaper}) {
   
   const [movies, setMovies] = useState([])
   const movie = movies[Math.floor(Math.random() * movies.length)]
-  console.log('movieee',movie);
   
   const apiFetch=async ()=>{
     try {
       const {data}= await axios.get(wallpaper)
-       console.log('tv andffff movie', data.results);
       setMovies(data.results)
   } catch (error) {
-    console.log(error);
     
   }
 }
@@ -40,8 +37,8 @@ if (str?.length>num) {
   <p className='text-gray-400 py-2'>{movie?.release_date||movie?.first_air_date}</p>
   <p className='text-gray-400 py-2 w-full md:w-[70%] lg:w-[50%] xl:w-[35%}'>{word(movie?.overview,150)||'NO Info About this Show'}</p>
 
-  <button className='border px-6 py-3 rounded bg-white mr-2 ' >play</button>
-  <button className='border  text-white px-6 py-3 bg-red-600 rounded' >watch later</button>
+  {/* <button className='border px-6 py-3 rounded bg-white mr-2 ' >play</button>
+  <button className='border  text-white px-6 py-3 bg-red-600 rounded' >watch later</button> */}
 </div>
 
 </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import icon from "../../../assets/daniel.jpg";
 export default function FavMovies({ movie, key, deleteFn }) {
   return (
     <>

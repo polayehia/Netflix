@@ -26,18 +26,13 @@ export default function Category() {
       try {
         const { data } = await axios.get(request.movieCategory(id, page));
         setMovCaregory(data);
-        console.log("moviescategory", data);
       } catch (error) {
-        console.log("error form fetchCategory", error);
       }
     } else {
       try {
         const { data } = await axios.get(request.tvCategory(id,page));
         setMovCaregory(data);
-        console.log("tvcategory", data);
-        console.log(data);
       } catch (error) {
-        console.log("error form fetchCategory", error);
       }
     }
   };
@@ -50,7 +45,7 @@ export default function Category() {
     <>
       <div className="grid pt-20 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
         {movCaregory?.results?.map((movie) => (
-          <MoviesList movie={movie}></MoviesList>
+          <MoviesList key={movie.id} movie={movie}></MoviesList>
         ))}
       </div>
       <div className=" mx-auto  w-1/2">
@@ -65,11 +60,11 @@ export default function Category() {
                 <PaginationItem
                   {...item}
                   sx={{
-                    color: "white", // Set the text color of the numbers to white
+                    color: "white", 
                     bgcolor: "transparent",
-                    fontSize: "16px", // Set transparent background for the pagination items
+                    fontSize: "16px", 
                     "&:hover": {
-                      color: "red", // Hover effect (background color on hover)
+                      color: "red", 
                     },
                     "&:focus": {
                       color: "red",

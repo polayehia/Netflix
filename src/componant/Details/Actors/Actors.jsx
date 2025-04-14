@@ -14,17 +14,13 @@ export default function Actors() {
       try {
         const { data } = await axios.get(request.movieActors(id));
         setActors(data.cast);
-        console.log(data);
       } catch (error) {
-        console.log("errror from actors fetch", error);
       }
   }else{
     try {
       const { data } = await axios.get(request.tvActors(id));
       setActors(data.cast);
-      console.log(data);
     } catch (error) {
-      console.log("errror from actors fetch", error);
     }
   }
   };

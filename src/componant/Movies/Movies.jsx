@@ -35,25 +35,25 @@ export default function Movies({ id, ele }) {
           key={id}
           className="movie-container  relative inline-block w-40 sm:w-52 md:w-60 lg:w-72 p-2 group "
         >
-          <img
-            src={ `https://image.tmdb.org/t/p/w500/${ele.backdrop_path}`}
+{ele.backdrop_path?<img
+            src={ `https://image.tmdb.org/t/p/w500/${ele.backdrop_path}`
+            }
             alt={ele?.title}
             className="movie-image overflow-hidden block h-auto w-full object-cover transition-transform duration-300 group-hover:scale-105"
-          />
+          />: <img
+          src={ logo}
+          alt={ele?.title}
+          className="mx-auto w-full overflow-hidden object-contain block h-20 sm:h-40  transition-transform duration-300 group-hover:scale-105"
+        />}
+          
+         
   
 
           <div className="overlay  absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <p className="movie-title text-white flex justify-center text-center items-center w-full h-full p-4 text-lg font-semibold">
               {ele?.title || ele?.original_name}
             </p>
-            <p>
-              <i
-                className={`like-icon fas ${
-                  !like ? "fa-heart-crack" : "fa-heart text-red-600"
-                } absolute top-3 left-3 text-white cursor-pointer`}
-                onClick={saveMovies}
-              ></i>
-            </p>
+            
           </div>
         </div>
       </Link>

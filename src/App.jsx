@@ -1,6 +1,4 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+
 
 
 import './App.css'
@@ -28,15 +26,13 @@ import CategoryList from './componant/Category/CategoryList/CategoryList';
 
 function App() {
 let router =createBrowserRouter([{
-
   path: '/',element:<Layout></Layout>,children:[
-   {path:'/',element:<ProtactedRout><Home></Home></ProtactedRout> },
+   {index:true, path: '/', element:<ProtactedRout><Home></Home></ProtactedRout> },
    {path:'/account',element:<ProtactedRout><Account></Account></ProtactedRout>},
-  //  {path:'/home',element:<ProtactedRout><Home></Home></ProtactedRout> },
+   {path:'/home',element:<ProtactedRout><Home></Home></ProtactedRout> },
    {path:'/categorylist',element:<ProtactedRout><CategoryList></CategoryList></ProtactedRout>},
-   {path:'/register',element:<Register></Register>},
-   {path:'/login',element:<Login></Login>},
-   {path:'/login',element:<Login></Login>},
+  //  {path:'/register',element:<Register></Register>},
+  //  {path:'/login',element:<Login></Login>},
    {path:'/details/:id',element:<ProtactedRout><Details></Details></ProtactedRout>},
    {path:'/actorsdetails/:id',element:<ProtactedRout><ActorsDetails></ActorsDetails></ProtactedRout>},
    {path:'/actorsmovies/:id',element:<ProtactedRout><ActorsMovies></ActorsMovies></ProtactedRout>},

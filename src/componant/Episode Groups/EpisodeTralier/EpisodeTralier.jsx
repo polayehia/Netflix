@@ -7,16 +7,13 @@ import { request } from '../../../API/Api';
 
 export default function EpisodeTralier() {
     const { id, season, episode } = useParams();
-    console.log('params tralier', { id, season, episode });
     
     const [episodeTrailer, setEpisodeTrailer] = useState(null)
     const episodeTralierFetch = async () => {
         try {
             const { data } = await axios.get(request.tvEpisodeTrailer(id, season, episode))
             setEpisodeTrailer(data.results[0])
-            console.log('episodeTrailer', data.results);
         } catch (error) {
-            console.log('errorfromepisodeTralierFetch ', error);
 
         }
     }

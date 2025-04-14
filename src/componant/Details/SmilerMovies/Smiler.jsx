@@ -17,17 +17,13 @@ export default function Smiler() {
       try {
         const { data } = await axios.get(request.similarMovies(id));
         setSmilerMov(data.results);
-        console.log("smilermovies", data.results[0]);
       } catch (error) {
-        console.log("errror from Smiler movie fetch", error);
       }
     }else{
       try {
         const { data } = await axios.get(request.tvSimilar(id));
         setSmilerMov(data.results);
-        console.log("smilertvshow", data.results[0]);
       } catch (error) {
-        console.log("errror from Smiler tv fetch", error);
       }
     }
    
@@ -57,7 +53,7 @@ export default function Smiler() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 3, 
           
         },

@@ -9,15 +9,12 @@ import EpisodeTralier from '../EpisodeTralier/EpisodeTralier';
 export default function EpisodeDetails() {
   const [episodeDetails,setEpisodeDetails]=useState(null)
   const { id, season, episode } = useParams();
-  console.log('params', { id, season, episode });
 
    async function episodeFetch () {
       try {
         const {data}=await axios.get(request.tvSeasonEpisodes(id,season,episode))
         setEpisodeDetails(data)
-        console.log('episodeData',data);
       } catch (error) {
-        console.log('errorfromepisodeFetch ',error);
         
       }
     }

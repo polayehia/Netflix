@@ -1,79 +1,44 @@
 import React from "react";
-import Header from "../Header/Header";
-import Row from "../Row/Row";
 import { request } from "./../../API/Api";
 import Switch from "../Switch/Switch";
 import { useContext } from "react";
 import { Authcontext } from "../../AuthContext/AuthContext";
 import Search from "../Search/Search";
+import MovieShow from "../Show/MovieShow";
+import TvShow from "../Show/TvShow";
 // import { auth } from "../../firebase";
+import MoviesList from './../Movies/MoviesList';
+import Button from '@mui/material/Button';
 
 export default function Home() {
-  // const au=auth;
-  // console.log('au',au)
+ 
 
-  const { movie } = useContext(Authcontext);
-  console.log(
-    "Wallpaper:",
-    !movie ? request.discovermovie : request.discovertv
-  );
+  const { movie,searchResults,setSearchResults } = useContext(Authcontext);
+
 
   return (
     <>
-      <header>
-        {!movie ? (
-          <Header wallpaper={request.discovermovie}></Header>
-        ) : (
-          <Header wallpaper={request.discovertv}></Header>
-        )}
-      </header>
+  
+{searchResults.length > 0 ? (
+  <div className=" pt-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4 p-4">
+    {searchResults.map((movie) => (
+      <MoviesList movie={movie} key={movie.id}></MoviesList>
+    ))
+  }
+  <Button sx={{ position: 'fixed', right: 0, bottom:'50%' }} variant="contained" onClick={()=>{setSearchResults('')}}>Back</Button>
+  </div>
+) : !movie ? (
+  <MovieShow></MovieShow>
+) : (
+  <TvShow></TvShow>
+)}
 
-<Search></Search>
-<div className="">
-      <section>
-        {/* this componante for switch from movies to tv  */}
-        <Switch></Switch>
-        {!movie ? (
-          <Row title="Upcoming " apiUrl={request.upcomingMovies}></Row>
-        ) : (
-          " "
-        )}
-        {/* <Row title="Upcoming " apiUrl={request.upcomingMovies}></Row> */}
-      </section>
 
-      <section>
-        {!movie ? (
-          <Row title="Puperler " apiUrl={request.pupolermovies}></Row>
-        ) : (
-          <Row title="Puperler " apiUrl={request.popularTv}></Row>
-        )}
-      </section>
+ 
 
-      <section>
-        {!movie ? (
-          <Row title="Trending " apiUrl={request.trendingmovie}></Row>
-        ) : (
-          <Row title="Trending " apiUrl={request.trendingtv}></Row>
-        )}
-      </section>
-      <section>
-        {!movie ? (
-          <Row title="NowPlaying " apiUrl={request.nowPlaying}></Row>
-        ) : (
-          <Row title="Discover " apiUrl={request.discovertv}></Row>
-        )}
-        {/* <Row title="NowPlaying " apiUrl={request.nowPlaying}></Row> */}
-      </section>
+     
 
-      <section>
-        {!movie ? (
-          <Row title="TopRated " apiUrl={request.topRated}></Row>
-        ) : (
-          <Row title="TopRated " apiUrl={request.topRatedtv}></Row>
-        )}
-        {/* <Row title="TopRated " apiUrl={request.topRated}></Row> */}
-      </section>
-</div>
+
     </>
   );
 }

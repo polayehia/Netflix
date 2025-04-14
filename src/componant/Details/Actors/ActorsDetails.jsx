@@ -12,10 +12,8 @@ export default function ActorsactorDit() {
     try {
       const {data}= await axios.get(`https://api.themoviedb.org/3/person/${id}?api_key=f0c559c70b2257a69cffc3fe3e12b60c`)
     setActorDit(data)
-    console.log(data);
     
     } catch (error) {
-      console.log('error form actorsactorDit',error);
       
     }
   }
