@@ -19,7 +19,7 @@ import ActorsDetails from './components/Details/Actors/ActorsDetails';
 import ActorsMovies from './components/Details/Actors/ActorsMovies';
 import Category from './components/Category/Category';
 import AllSeasons from './components/EpisodeGroups/Seasons/AllSeasons/AllSeasons';
-import EpisodeDetails from './components/EpisodeGroups/episodeDetails/episodeDetails';
+import EpisodeDetails from './components/EpisodeGroups/EpisodeDetails/EpisodeDetails';
 import CategoryList from './components/Category/CategoryList/CategoryList';
 
 
