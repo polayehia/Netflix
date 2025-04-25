@@ -51,6 +51,7 @@ export default function Row({ title, apiUrl ,ismovie}) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          donts:false
         },
       },
     ],
